@@ -51,15 +51,22 @@ function LocationPicker() {
 
   function pickOnMapHandler() {}
 
+  let locaitonPreview = <Text>No Location picked yet.</Text>;
+
+  if (pickedLocation) {
+    locaitonPreview = (
+      <Image
+        style={styles.image}
+        source={{
+          uri: getMapPreview(pickedLocation.lat, pickedLocation.lng),
+        }}
+      />
+    );
+  }
+
   return (
     <View>
-      <View style={styles.mapPreview}>
-        <Image
-          source={{
-            uri: getMapPreview(pickedLocation.lat, pickedLocation.lng),
-          }}
-        />
-      </View>
+      <View style={styles.mapPreview}>{locaitonPreview}</View>
       <View style={styles.actions}>
         <OutlinedButton icon="location" onPress={getLocationHandler}>
           Locate User
@@ -88,5 +95,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginBottom: 32,
+  },
+  mapPreviewImage: {
+    width: "100%",
+    height: "100%",
   },
 });
