@@ -1,4 +1,4 @@
-import { Alert, View, StyleSheet, Image } from "react-native";
+import { Alert, View, StyleSheet, Image, Text } from "react-native";
 import {
   getCurrentPositionAsync,
   useForegroundPermissions,

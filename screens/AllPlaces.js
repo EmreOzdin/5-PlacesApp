@@ -1,4 +1,4 @@
-import PlacesList from "./Places/PlacesList";
+import PlacesList from "../components/Places/PlacesList";
 
 export default function AllPlaces() {
   return <PlacesList />;
