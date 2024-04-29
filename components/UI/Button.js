@@ -1,8 +1,8 @@
-import { Children } from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
-export default function Button() {
+import { Colors } from "../../constants/colors";
+
+export default function Button({ onPress, children }) {
   return (
     <Pressable
       style={({ pressed }) => {
@@ -10,7 +10,7 @@ export default function Button() {
       }}
       onPress={onPress}
     >
-      <Text style={styles.text}>{Children}</Text>
+      <Text style={styles.text}>{children}</Text>
     </Pressable>
   );
 }
